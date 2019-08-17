@@ -4,10 +4,11 @@ const casellaCartellone = document.querySelectorAll('.riga div');
 const cartella = document.getElementById('cartella');
 const estrazione = document.getElementById('btn_est');
 const nonUscito = document.querySelector('.nonUscito');
+let numEstrattoDOM = document.getElementById('numero_estratto');
 const premi = document.querySelectorAll('#premi div');
 const tombola = document.getElementById("tombola");
 const nuovaPartitaBottone = document.getElementById('btn_new_game');
-const compraCartella = document.getElementById('btn_compra');
+
 
 //genera numero casuale
 let numeroRandom = () => Math.floor(Math.random() * 90) + 1; 
@@ -37,7 +38,6 @@ function generaCartella(){
 // Evento per gestire il click estrazione numero casuale
 
 estrazione.addEventListener('click', () => {
-    let numEstrattoDOM = document.getElementById('numero_estratto');
     let numeroEstratto = numeroRandom();
 
         // Aggiornamento interfaccia grafica con numero estratto
@@ -143,6 +143,8 @@ function init(){
     tombola.style.display = "none";
 
     nonUscito.innerHTML = '';
+
+    numEstrattoDOM.innerHTML = '';
 
     premi.forEach(function(item){
         item.style.display = 'none';
